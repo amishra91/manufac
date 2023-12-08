@@ -20,6 +20,10 @@ This project includes utility functions written in TypeScript to perform various
 - **TypeScript Usage:**
   - The entire project is written in TypeScript for enhanced type safety and code readability.
 
+## Screenshot
+
+![Screenshot of the Tables](https://github.com/amishra91/manufac/blob/main/public/images/screenshot.png)
+
 ## Getting Started
 
 1. **Clone the Repository:**
