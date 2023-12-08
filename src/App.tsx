@@ -1,24 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+import { calculateGamma, getClassWiseStatistics } from './utils/index';
+import { WineData } from './types';
+import data from './data.json';
+
+import Table from './components/Table/index';
+
+const dataset: WineData[] = data;
+
 function App() {
+  const flavanoidsData = getClassWiseStatistics(dataset, 'Flavanoids');
+  const gammaData = getClassWiseStatistics(dataset, calculateGamma);
+
+  console.log('flavanoidsData=', flavanoidsData);
+  console.log('gammaData=', gammaData);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <h2>Flavanoids Table</h2>
+        <Table data={flavanoidsData} />
+
+        <h2>Gamma Table</h2>
+        <Table data={gammaData} />
+      </div>
     </div>
   );
 }
