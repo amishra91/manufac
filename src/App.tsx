@@ -18,10 +18,10 @@ function App() {
     <div className="App">
       <div>
         <h2>Flavanoids Table</h2>
-        <Table data={flavanoidsData} />
+        <Table data={flavanoidsData} tableType="Flavanoids" />
 
         <h2>Gamma Table</h2>
-        <Table data={gammaData} />
+        <Table data={gammaData} tableType="Gamma" />
       </div>
     </div>
   );

@@ -7,9 +7,10 @@ interface Props {
     median: number;
     mode: number;
   }[];
+  tableType: string;
 }
 
-const Table = ({ data }: Props) => (
+const Table = ({ data, tableType }: Props) => (
   <table>
     <thead>
       <tr>
@@ -21,19 +22,19 @@ const Table = ({ data }: Props) => (
     </thead>
     <tbody>
       <tr>
-        <td>Flavanoids Mean</td>
+        <td>{`${tableType} Mean`}</td>
         {data.map(({ mean }) => (
           <td key={mean}>{mean.toFixed(3)}</td>
         ))}
       </tr>
       <tr>
-        <td>Flavanoids Median</td>
+        <td>{`${tableType} Median`}</td>
         {data.map(({ median }) => (
           <td key={median}>{median.toFixed(3)}</td>
         ))}
       </tr>
       <tr>
-        <td>Flavanoids Mode</td>
+        <td>{`${tableType} Mode`}</td>
         {data.map(({ mode }) => (
           <td key={mode}>{mode.toFixed(3)}</td>
         ))}
